@@ -37,7 +37,8 @@ namespace Payment.API.Consumers
                 {
                     BuyerId = context.Message.BuyerId,
                     OrderId = context.Message.OrderId,
-                    Message = "Not enough balance"
+                    Message = "Not enough balance",
+                    OrderItems = context.Message.OrderItems
                 });
             }
         }
