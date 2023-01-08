@@ -5,6 +5,7 @@ VisualStudioVersion = 17.5.33209.295
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9A5FBE1-6701-4790-97B5-5BEE6C040C98}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\..\Users\Emir TARTAR\Desktop\Choreography-Based-Saga.PNG = ..\..\..\..\..\Users\Emir TARTAR\Desktop\Choreography-Based-Saga.PNG
 		README.md = README.md
 	EndProjectSection
 EndProject
