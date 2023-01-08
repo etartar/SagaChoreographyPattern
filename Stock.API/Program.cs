@@ -1,5 +1,7 @@
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
+using Shared.Library.Settings;
+using Stock.API.Consumers;
 using Stock.API.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -25,7 +27,14 @@ builder.Services.AddMassTransit(mt =>
             host.Username(builder.Configuration.GetConnectionString("RabbitMQUserName"));
             host.Password(builder.Configuration.GetConnectionString("RabbitMQPassword"));
         });
+
+        cfg.ReceiveEndpoint(RabbitMQSettings.StockOrderCreatedEventQueueName, e =>
+        {
+            e.ConfigureConsumer<OrderCreatedEventConsumer>(context);
+        });
     });
+
+    mt.AddConsumer<OrderCreatedEventConsumer>();
 });
 
 builder.Services.AddMassTransitHostedService();
